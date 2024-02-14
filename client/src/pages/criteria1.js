@@ -19,7 +19,6 @@ const Criteria1 = () => {
 
   const handleCrit11Data = (data) => {
     setCrit11Data(data);
-    console.log(crit11Data);
   };
 
   const handleCrit12Data = (data) => {
@@ -61,7 +60,7 @@ const Criteria1 = () => {
       for (const key in crit14Data) {
         formdata.append(key, crit14Data[key]);
       }
-      const response = await axios.post("http://localhost:5000/data/submit", formdata);
+      const response = await axios.post("https://naacserver.onrender.com/data/submit", formdata);
       console.log(response.data); 
       alert("Criteria 1 submitted!");
     } catch (error) {
@@ -77,27 +76,27 @@ const Criteria1 = () => {
 
   return (
     <div className="criteria1">
-      <div className='logo-e'>
-                <img src={naacLogo} alt='NAAC LOGO' />
-                <div className='head'>
-
-                    <h1 >University of Mumbai</h1>
-                    <h3>AQAR Platform</h3>
-
-                </div>
-            </div>
-      <div className="yearly_status_rep">
-        <p>Yearly Status Report - Part B</p>
-        <p>Academic Year to which AQAR has to be submitted: {academicYear}</p>
-        <p>Department: {department}</p>
-      </div>
-      <div className="info-section">
-        <h2>Note</h2>
-        <ul>
-          <li>When the save button is clicked, the progress will be restored when you come back.</li>
-          <li>The data can be edited till the time you don't click the submit button</li>
-          <li>Before clicking the submit button, ensure that all the fields are filled even if you had saved the progress</li>
-        </ul>
+      <div className="crit1-head">
+        <div className='logo-e'>
+          <img src={naacLogo} alt='NAAC LOGO' />
+          <div className='head'>
+            <h1 >University of Mumbai</h1>
+            <h3>AQAR Platform</h3>
+          </div>
+        </div>
+        <div className="yearly_status_rep">
+          <p>Yearly Status Report - Part B</p>
+          <p>Academic Year to which AQAR has to be submitted: {academicYear}</p>
+          <p>Department: {department}</p>
+        </div>
+        <div className="info-section">
+          <h2>Note</h2>
+          <ul>
+            <li>When the save button is clicked, the progress will be restored when you come back.</li>
+            <li>The data can be edited till the time you don't click the submit button</li>
+            <li>Before clicking the submit button, ensure that all the fields are filled even if you had saved the progress</li>
+          </ul>
+        </div>
       </div>
       <div className="crit1">
         <h2>Criterion 1 - Curricular Aspects</h2>

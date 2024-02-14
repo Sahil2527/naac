@@ -5,6 +5,9 @@ import axios from "axios";
 
 const Criteria36 = ({onCrit36Data}) => {
 
+    const department = localStorage.getItem('department');
+    const academicYear = localStorage.getItem('academicYear');
+
     const [extensionActText, setExtensionActText] = useState("");
     const [file3_6_1, setFile3_6_1] = useState(null);
     const [file3_6_2_1, setFile3_6_2_1] = useState(null);
@@ -34,6 +37,8 @@ const Criteria36 = ({onCrit36Data}) => {
         const formdata = new FormData();
     
         const sectionData = {
+            department,
+            academicYear,
             extensionActText,
             file3_6_1
         };
@@ -43,7 +48,7 @@ const Criteria36 = ({onCrit36Data}) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/data/save3-6-1", formdata);
+            const response = await axios.post("https://naacserver.onrender.com/data/save3-6-1", formdata);
             console.log(response.data);
             alert("Saved Section 3.6.1 data successfully!");
         } catch (error) {
@@ -56,6 +61,8 @@ const Criteria36 = ({onCrit36Data}) => {
         const formdata = new FormData();
     
         const sectionData = {
+            department,
+            academicYear,
             extActAwards,
             file3_6_2_1,
             file3_6_2_2
@@ -66,7 +73,7 @@ const Criteria36 = ({onCrit36Data}) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/data/save3-6-2", formdata);
+            const response = await axios.post("https://naacserver.onrender.com/data/save3-6-2", formdata);
             console.log(response.data);
             alert("Saved Section 3.6.2 data successfully!");
         } catch (error) {
@@ -79,6 +86,8 @@ const Criteria36 = ({onCrit36Data}) => {
         const formdata = new FormData();
     
         const sectionData = {
+            department,
+            academicYear,
             outreachPrograms,
             file3_6_3_1,
             file3_6_3_2
@@ -89,7 +98,7 @@ const Criteria36 = ({onCrit36Data}) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/data/save3-6-3", formdata);
+            const response = await axios.post("https://naacserver.onrender.com/data/save3-6-3", formdata);
             console.log(response.data);
             alert("Saved Section 3.6.3 data successfully!");
         } catch (error) {
@@ -102,6 +111,8 @@ const Criteria36 = ({onCrit36Data}) => {
         const formdata = new FormData();
     
         const sectionData = {
+            department,
+            academicYear,
             participatingStudents,
             file3_6_4_1,
             file3_6_4_2
@@ -112,7 +123,7 @@ const Criteria36 = ({onCrit36Data}) => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/data/save3-6-4", formdata);
+            const response = await axios.post("https://naacserver.onrender.com/data/save3-6-4", formdata);
             console.log(response.data);
             alert("Saved Section 3.6.4 data successfully!");
         } catch (error) {
